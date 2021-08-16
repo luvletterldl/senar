@@ -11,3 +11,5 @@ layout: 'layouts/base.njk'
 [事件](/browserEvent)
 
 [css](http://47.98.159.95/my_blog/blogs/css/001.html)
+
+[javascript随机数生成](/jsRandom)
