@@ -1,8 +1,6 @@
 import { ReactElement } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Layout from './index'
-import qrcode from '../../public/images/qrcode.jpg'
 
 interface BlogPreviewInterface {
   props: {
@@ -22,7 +20,7 @@ export default function BlogPreview({ props, children }: BlogPreviewInterface) {
         </header>
         {children}
         <footer className="fixed bottom-6 right-12 w-36 align-right flex items-center flex-col text-current">
-          <Image src={qrcode} width={168} height={168} alt="微信公众号Senar"/>
+          <img src="/images/qrcode.jpg" width={168} height={168} alt="微信公众号Senar" />
           <p className="w-full flex items-center justify-between">
             <Link href="https://juejin.cn/user/2770425031433598">掘金</Link>|
             <Link href="https://blog.csdn.net/i_am_a_sb">CSDN</Link>|
