@@ -1,13 +1,9 @@
-import Layout from "../components/layouts";
+import BlogPreview from "../components/layouts/blogPreview";
 
 export default function Current () {
-  const props = {
-    title: 'Senar当前的一些文章',
-    description: 'Senar当前的一些文章'
-  }
   return (
-    <Layout props={props}>
+    <BlogPreview props={{type: true}}>
       <div className="current">当前</div>
-    </Layout>
+    </BlogPreview>
   )
 }

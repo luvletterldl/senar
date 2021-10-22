@@ -1,5 +1,9 @@
+import BlogPreview from "../components/layouts/blogPreview";
+
 export default function Archive () {
   return (
-    <div className="">归档</div>
+    <BlogPreview props={{type: false}}>
+      <div className="current">归档</div>
+    </BlogPreview>
   )
 }
