@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-import Layout from './components/layouts'
+import Layout from '../components/layouts'
 
 export default function Home({ imgUrl }) {
   const backStyle = {

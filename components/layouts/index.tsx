@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { HTMLAttributes, ReactElement } from 'react'
-import style from '../../../styles/Home.module.css'
+import style from '../../styles/Home.module.css'
 interface LayoutProps {
   props?: {
     title?: string

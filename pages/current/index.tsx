@@ -1,4 +1,4 @@
-import BlogPreview from "../components/layouts/blogPreview";
+import BlogPreview from "../../components/layouts/blogPreview";
 
 export default function Current () {
   return (
