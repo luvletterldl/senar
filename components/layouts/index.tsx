@@ -14,7 +14,7 @@ export default function Layout({ props, children, mainStyle }: LayoutProps) {
     <div className={style.container}>
       <Head>
         <title>{props?.title || 'Senar的个人网站'}</title>
-        <meta name="description" content={props?.description || "Senar的个人网站"} />
+        <meta name="description" content={props?.description.substr(0, 300) || "Senar的个人网站"} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={style.main} style={mainStyle}>{ children }</main>
