@@ -10,6 +10,7 @@ import { hopscotch as mdStyle } from 'react-syntax-highlighter/dist/cjs/styles/p
 
 import { useState } from "react";
 import { useRouter } from 'next/router'
+import { NoData } from "@/components/common/noData";
 // hopscotch materialDark materialOceanic vscDarkPlus
 
 export default function Archive ({ mds }) {
@@ -18,11 +19,11 @@ export default function Archive ({ mds }) {
   const { index } = router.query;
 
   const [currentIndex, updateCurrentIndex] = useState(0)
-  if (index && Number(index) !== currentIndex) {
+  if (mds.length && index && Number(index) !== currentIndex) {
     updateCurrentIndex(Number(index))
   }
 
-  const props = {
+  const props = mds.length ? {
     type: false,
     date: dayjs(mds[currentIndex].mdate).format('YYYY-MM-DD HH:mm'),
     title: mds[currentIndex].filename.slice(0, -3),
@@ -35,9 +36,12 @@ export default function Archive ({ mds }) {
       index: currentIndex - 1,
       name: mds[currentIndex - 1].filename.slice(0, -3)
     } : null
+  } : {
+    type: false,
+    title: '暂无数据',
   }
 
-  return (
+  return mds.length ? (
     <BlogPreview props={props}>
       <ReactMarkdown 
         components={{
@@ -65,13 +69,15 @@ export default function Archive ({ mds }) {
         {mds[currentIndex].content}
       </ReactMarkdown>
     </BlogPreview>
+  ) : (
+    <NoData />
   )
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const mdDirectory = path.join(process.cwd(), 'public/markdown')
+  const mdDirectory = path.join(process.cwd(), 'public/markdown/archive')
   const filenames = await fs.readdir(mdDirectory)
-  const mdsPromises = filenames.map(async (filename) => {
+  const mdsPromises = filenames.length ? filenames.map(async (filename) => {
     const filePath = path.join(mdDirectory, filename)
     const fileContents = await fs.readFile(filePath, 'utf8')
     return {
@@ -80,8 +86,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       filePath,
       content: fileContents,
     }
-  })
-  const mds = await (await Promise.all(mdsPromises)).sort((a, b) => { return b.mdate - a.mdate })
+  }): []
+  const mds = filenames.length ? await (await Promise.all(mdsPromises)).sort((a, b) => { return b.mdate - a.mdate }) : []
   return {
     props: {
       mds,

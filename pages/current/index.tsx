@@ -16,15 +16,13 @@ export default function Current ({ mds }) {
 
   const router = useRouter();
   const { index } = router.query;
-
   const [currentIndex, updateCurrentIndex] = useState(0)
   if (index && Number(index) !== currentIndex) {
     updateCurrentIndex(Number(index))
   }
-
   const props = {
     type: true,
-    date: dayjs(mds[currentIndex].mdate).format('YYYY-MM-DD HH:mm'),
+    date: dayjs(mds[currentIndex].bdate).format('YYYY-MM-DD HH:mm'),
     title: mds[currentIndex].filename.slice(0, -3),
     description: mds[currentIndex].filename.slice(0, -3) + mds[currentIndex].content,
     prev: currentIndex + 1 >= mds.length ? null : {
@@ -69,19 +67,19 @@ export default function Current ({ mds }) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const mdDirectory = path.join(process.cwd(), 'public/markdown')
+  const mdDirectory = path.join(process.cwd(), 'public/markdown/current')
   const filenames = await fs.readdir(mdDirectory)
   const mdsPromises = filenames.map(async (filename) => {
     const filePath = path.join(mdDirectory, filename)
     const fileContents = await fs.readFile(filePath, 'utf8')
     return {
       filename,
-      mdate: (await fs.stat(filePath)).mtime.getTime(),
+      bdate: (await fs.stat(filePath)).birthtimeMs,
       filePath,
       content: fileContents,
     }
   })
-  const mds = await (await Promise.all(mdsPromises)).sort((a, b) => { return b.mdate - a.mdate })
+  const mds = await (await Promise.all(mdsPromises)).sort((a, b) => { return b.bdate - a.bdate })
   return {
     props: {
       mds,
