@@ -1,16 +1,31 @@
 {
-  "name": "code-life",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "senar",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "npx eleventy --serve",
-    "build": "npx eleventy"
+    "dev": "next dev -p 9999",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate": "next build && next export"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "dayjs": "^1.10.7",
+    "next": "12.0.2",
+    "react": "^18.0.0-alpha-6bce0355c-20211031",
+    "react-dom": "^18.0.0-alpha-6bce0355c-20211031",
+    "react-markdown": "^7.1.0",
+    "react-syntax-highlighter": "^15.4.4",
+    "remark-gfm": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.4",
+    "@types/react": "^17.0.32",
+    "autoprefixer": "^10.3.7",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.2",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17",
+    "typescript": "^4.4.4"
   }
 }
