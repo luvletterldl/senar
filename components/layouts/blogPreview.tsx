@@ -26,7 +26,7 @@ export default function BlogPreview({ props, children }: BlogPreviewInterface) {
       <div className="blog-preview w-full h-full">
         <header className='m-6'>
           <p>
-            Senar的个人网站 » <Link href="/"><span className="text-red-300">首页</span></Link>
+            Senar的个人网站 » <Link href="/"><span className="cursor-pointer text-red-300">首页</span></Link>
           </p>
           <div className={`text-2xl flex flex-col items-start justify-between text-white rounded-lg p-3 ${props.type ? 'bg-red-300' : 'bg-blue-300'}`}>
             <span className="whitespace-nowrap">Senar的Blog（{ props.type ? "当前" : '归档' }）</span>
