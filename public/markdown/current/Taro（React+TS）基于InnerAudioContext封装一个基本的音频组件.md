@@ -18,42 +18,77 @@
 ### InnerAudioContext提供的属性和方法
 **属性**:
 > string **`src`**: 音频资源的地址，用于直接播放。
+
 > bumber **`startTime`**: 开始播放的位置（单位：s），默认为 0
+
 > boolean **`autoplay`**: 是否自动开始播放，默认为 `false`
+
 > boolean **`loop`**: 是否循环播放，默认为 `false`
+
 > number **`volume`**: 音量。范围 0~1。默认为 1
+
 > number **`playbackRate`**: 播放速度。范围 0.5-2.0，默认为 1。（Android 需要 6 及以上版本）
+
 > number **`duration`**: 当前音频的长度（单位 s）。只有在当前有合法的 src 时返回（只读）
+
 > number **`currentTime`**: 当前音频的播放位置（单位 s）。只有在当前有合法的 src 时返回，时间保留小数点后 6 位（只读）
+
 > boolean **`paused`**: 当前是是否暂停或停止状态（只读）
+
 > number **`buffered`**: 音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲（只读）
+
 
 **方法**：
 > **`play()`**: 播放
+
 > **`pause()`**: 暂停。暂停后的音频再播放会从暂停处开始播放
+
 > **`stop()`**: 停止。停止后的音频再播放会从头开始播放。
+
 > **`seek(postions: number)`**:跳转到指定位置
+
 > **`destory()`**: 销毁当前实例
+
 > **`onCanplay(callback)`**: 监听音频进入可以播放状态的事件。但不保证后面可以流畅播放
+
 > **`offCanplay(callback)`**: 取消监听音频进入可以播放状态的事件
+
 > **`onPlay(callback)`**: 监听音频播放事件
+
 > **`offPlay(callback)`**: 取消监听音频播放事件
+
 > **`onPause(callback)`**: 监听音频暂停事件
+
 > **`offPause(callback)`**: 取消监听音频暂停事件
+
 > **`onStop(callback)`**: 监听音频停止事件
+
 > **`offStop(callback)`**: 取消监听音频停止事件
+
 > **`onEnded(callback)`**: 监听音频自然播放至结束的事件
+
 > **`offEnded(callback)`**: 取消监听音频自然播放至结束的事件
+
 > **`onTimeUpdate(callback)`**: 监听音频播放进度更新事件
+
 > **`offTimeUpdate(callback)`**: 取消监听音频播放进度更新事件
+
 > **`onError(callback)`**: 监听音频播放错误事件
+
 > **`offError(callbcak)`**: 取消监听音频播放错误事件
+
 > **`onWaiting(callback)`**: 监听音频加载中事件。当音频因为数据不足，需要停下来加载时会触发
+
 > **`offWaiting(callback)`**: 取消监听音频加载中事件
+
 > **`onSeeking(callback)`**: 监听音频进行跳转操作的事件
+
 > **`offSeeking(callback)`**: 取消监听音频进行跳转操作的事件
+
 > **`onSeeked(callback)`**: 监听音频完成跳转操作的事件
+
 > **`offSeeked(callback)`**: 取消监听音频完成跳转操作的事件
+
 
 让我们开始吧🛠
 
@@ -224,7 +259,7 @@ export default CustomAudio as ComponentClass<PageOwnProps, PageState>
 2. 显示播放进度及总时长
 3. 通过图标变化显示当前音频所处状态（暂停/播放/加载中）
 
-但是这个组件还有一些问题：
+#### 但是这个组件还有一些问题：
 1. 页面卸载之后没有对`innerAudioContext`对象停止播放和回收
 2. 一个页面如果有多个音频组件这些组件可以同时播放这会导致音源混乱，性能降低
 3. 因为是在`ComponentWillMount`中初始化了`innerAudioContext`的属性所以当`props`中的`audioSrc`变化的时候组件本身不会更新音源、组件的播放状态和播放时长
