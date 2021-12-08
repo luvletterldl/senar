@@ -11,8 +11,8 @@ export default function Home({ imgUrl }) {
     <Layout mainStyle={backStyle}>
       <div className="home-card">
         <p>Senar的个人网站</p>
-        <Link href="/current">当前(Current)</Link>
-        <Link href="/archive">归档(Archive)</Link>
+        <Link href="/blog/vue">Vue</Link>
+        <Link href="/blog/other">杂谈</Link>
       </div>
     </Layout>
   )
