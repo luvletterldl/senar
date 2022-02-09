@@ -6,9 +6,9 @@ import { GetStaticProps } from "next";
 import BlogPreview from "@/components/layouts/blogPreview";
 import { assemblyMdProps, mdPageStaticProps } from 'helpers/utils';
 import { MdDirs } from 'helpers/constant/enums';
-const type = MdDirs.VUE
+const type = MdDirs.RUST
 
-export default function VueBlog ({ mds }) {
+export default function RustBlog ({ mds }) {
 
   const router = useRouter();
   const { index } = router.query;

@@ -6,6 +6,7 @@ import { GetStaticProps } from "next";
 import BlogPreview from "@/components/layouts/blogPreview";
 import { assemblyMdProps, mdPageStaticProps } from 'helpers/utils';
 import { MdDirs } from 'helpers/constant/enums';
+const type = MdDirs.OTHER
 
 export default function OtherBlog ({ mds }) {
 
@@ -15,7 +16,7 @@ export default function OtherBlog ({ mds }) {
   if (index && Number(index) !== currentIndex) {
     updateCurrentIndex(Number(index))
   }
-  const props = { type: MdDirs.OTHER, mds, currentIndex, ...assemblyMdProps(mds, currentIndex) }
+  const props = { type, mds, currentIndex, ...assemblyMdProps(mds, currentIndex) }
 
   return (
     <BlogPreview props={props}>
@@ -23,4 +24,4 @@ export default function OtherBlog ({ mds }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => await mdPageStaticProps(MdDirs.OTHER, fs)
+export const getStaticProps: GetStaticProps = async () => await mdPageStaticProps(type, fs)

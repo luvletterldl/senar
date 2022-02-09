@@ -12,6 +12,7 @@ export default function Home({ imgUrl }) {
       <div className="home-card">
         <p>Senar的个人网站</p>
         <Link href="/blog/vue">Vue</Link>
+        <Link href="/blog/rust">Rust</Link>
         <Link href="/blog/other">杂谈</Link>
       </div>
     </Layout>
