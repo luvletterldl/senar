@@ -1,4 +1,5 @@
 export enum MdDirs {
   VUE = 'vue',
-  OTHER = 'other'
+  RUST = 'rust',
+  OTHER = 'other',
 }
