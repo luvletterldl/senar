@@ -9,20 +9,20 @@ export default function Home({ imgUrl }) {
   }
   return (
     <Layout mainStyle={backStyle}>
-      <div className="home-card">
-        <p>Senar的个人网站</p>
-        <div className='h-1/2 w-full flex flex-row flex-wrap justify-between'>
-          <div className="w-1/2 text-center">
-            <Link href="/blog/other">杂谈</Link>
+      <div className="home-card" key={imgUrl}>
+        <p key={imgUrl}>Senar的个人网站</p>
+        <div key={imgUrl} className='h-1/2 w-full flex flex-row flex-wrap justify-between'>
+          <div key={imgUrl} className="w-1/2 text-center">
+            <Link key={imgUrl} href="/blog/other">杂谈</Link>
           </div>
-          <div className="w-1/2 text-center">
-            <Link href="/blog/frontend">前端</Link>
+          <div key={imgUrl} className="w-1/2 text-center">
+            <Link key={imgUrl} href="/blog/frontend">前端</Link>
           </div>
-          <div className="w-1/2 text-center">
-            <Link href="/blog/vue">Vue</Link>
+          <div key={imgUrl} className="w-1/2 text-center">
+            <Link key={imgUrl} href="/blog/vue">Vue</Link>
           </div>
-          <div className="w-1/2 text-center">
-            <Link href="/blog/rust">Rust</Link>
+          <div key={imgUrl} className="w-1/2 text-center">
+            <Link key={imgUrl} href="/blog/rust">Rust</Link>
           </div>
         </div>
       </div>
