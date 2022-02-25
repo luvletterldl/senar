@@ -1,0 +1,11 @@
+[build.environment]
+  NODE_VERSION = "16"
+
+[build]
+  publish = "out"
+  command = "npm run generate"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
