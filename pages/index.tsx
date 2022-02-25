@@ -11,9 +11,20 @@ export default function Home({ imgUrl }) {
     <Layout mainStyle={backStyle}>
       <div className="home-card">
         <p>Senar的个人网站</p>
-        <Link href="/blog/vue">Vue</Link>
-        <Link href="/blog/rust">Rust</Link>
-        <Link href="/blog/other">杂谈</Link>
+        <div className='h-1/2 w-full flex flex-row flex-wrap justify-between'>
+          <div className="w-1/2 text-center">
+            <Link href="/blog/other">杂谈</Link>
+          </div>
+          <div className="w-1/2 text-center">
+            <Link href="/blog/frontend">前端</Link>
+          </div>
+          <div className="w-1/2 text-center">
+            <Link href="/blog/vue">Vue</Link>
+          </div>
+          <div className="w-1/2 text-center">
+            <Link href="/blog/rust">Rust</Link>
+          </div>
+        </div>
       </div>
     </Layout>
   )
