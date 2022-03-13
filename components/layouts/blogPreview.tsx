@@ -90,7 +90,7 @@ export default function BlogPreview({ props }: BlogPreviewInterface) {
           <p key={props?.title} className="w-full flex items-center justify-between">
             <Link key={props?.title} href="https://juejin.cn/user/2770425031433598">掘金</Link>|
             <Link key={props?.title} href="https://blog.csdn.net/i_am_a_sb">CSDN</Link>|
-            <Link key={props?.title} href="https://segmentfault.com/u/ldl9527/articles">SF</Link>
+            <Link key={props?.title} href="https://segmentfault.com/u/senar">SF</Link>
           </p>
         </footer>
       </div>
