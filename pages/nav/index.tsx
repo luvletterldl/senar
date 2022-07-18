@@ -123,7 +123,7 @@ export default function Index() {
         {
           navagation[v].map(v => {
             return (
-              <div key={v.logo} className='m-3'>
+              <div key={v.logo} className='ml-3 my-3'>
                 <Card props={v} />
               </div>
             )
