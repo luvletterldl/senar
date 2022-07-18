@@ -94,6 +94,6 @@
 
 @layer components {
   .home-card {
-    @apply m-auto rounded-3xl bg-opacity-30 bg-black w-96 h-60 text-white text-2xl flex items-center flex-col justify-around
+    @apply m-auto rounded-3xl bg-opacity-30 bg-black w-96 h-60 text-white text-2xl flex items-center flex-col justify-around;
   }
 }

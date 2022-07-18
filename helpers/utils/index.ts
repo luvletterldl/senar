@@ -2,7 +2,6 @@ import { MdDirs } from 'helpers/constant/enums';
 import path from 'path';
 import dayjs from 'dayjs'
 import { useRouter } from 'next/router';
-import { type } from 'os';
 import { useState } from 'react';
 
 export function assemblyMdProps(mds: any[], currentIndex: number) {
