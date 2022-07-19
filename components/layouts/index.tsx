@@ -19,9 +19,6 @@ export default function Layout({ props, children, mainStyle }: LayoutProps) {
         <link key={props?.title} rel="icon" href="/favicon.ico" />
       </Head>
       <main key={props?.title} className={style.main} style={mainStyle}>
-        <nav className="absolute text-slate-50 top-3 m-12">
-          <Link href="/nav">导航</Link>
-        </nav>
         { children }
       </main>
     </div>
