@@ -90,6 +90,9 @@
     -webkit-margin-end: 0;
     font-weight: bold
   }
+  button {
+    @apply h-10 py-1 px-3 border rounded-md border-gray-900;
+  }
 }
 
 @layer components {
