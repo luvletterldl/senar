@@ -3,6 +3,7 @@ export default function Solution() {
     <div className="p-3 flex items-center [&>a]:ml-3 [&>a]:border [&>a]:rounded-md [&>a]:p-3 [&>a]:border-sky-300">
       <a href="https://www.deviceinfo.me/" target="_blank" rel="noreferrer">Device Info</a>
       <a href="https://web-api-examples.github.io/index.html" target="_blank" rel="noreferrer">Web Api Examples</a>
+      <a href="https://toolgg.com/" target="_blank" rel="noreferrer">Tool Kit</a>
     </div>
   )
 }
