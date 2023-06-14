@@ -1,33 +1,35 @@
 {
   "name": "senar",
   "version": "0.1.0",
-  "packageManager": "pnpm@7.6.0",
+  "packageManager": "pnpm@8.6.2",
   "private": true,
   "scripts": {
     "dev": "next dev -p 9999",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "up": "taze major -I",
     "generate": "next build && next export"
   },
   "dependencies": {
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.8",
     "next": "^12.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.3",
+    "react-markdown": "^8.0.7",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "@iconify/react": "^3.2.2",
-    "@types/node": "^18.7.14",
-    "@types/react": "^18.0.17",
-    "autoprefixer": "^10.4.8",
-    "eslint": "^8.23.0",
-    "eslint-config-next": "^12.2.5",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8",
-    "typescript": "^4.8.2"
+    "@iconify/react": "^4.1.0",
+    "@types/node": "^18.16.18",
+    "@types/react": "^18.2.12",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.42.0",
+    "eslint-config-next": "^13.4.5",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "taze": "^0.10.2",
+    "typescript": "^5.1.3"
   }
 }
